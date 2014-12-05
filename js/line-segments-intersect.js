@@ -66,7 +66,7 @@ function crossProduct(point1, point2) {
  * @param {Object} point1 point object with x and y coordinates
  * @param {Object} point2 point object with x and y coordinates
  * 
- * @return the subtraction result as a point object.
+ * @return the subtraction result as a point object
  */ 
 function subtractPoints(point1, point2) {
 	var result = {};
@@ -76,6 +76,14 @@ function subtractPoints(point1, point2) {
 	return result;
 }
 
+/**
+ * See if the points are equal.
+ *
+ * @param {Object} point1 point object with x and y coordinates
+ * @param {Object} point2 point object with x and y coordinates
+ *
+ * @return if the points are equal
+ */
 function equalPoints(point1, point2) {
 	return (point1.x == point2.x) && (point1.y == point2.y)
 }
