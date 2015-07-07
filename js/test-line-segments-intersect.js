@@ -163,3 +163,11 @@ test( "Collinear with overlap with negatives", function() {
 	q2 = {x:0, y:-4};
 	equal( doLineSegmentsIntersect(p, p2, q, q2), true, "Passed!" );
 });
+
+test( "Collinear, q is part of p", function() {
+	p = {x:10, y:0};
+	p2 = {x:40, y:0};
+	q = {x:30, y:0};
+	q2 = {x:20, y:0};
+	equal( doLineSegmentsIntersect(p, p2, q, q2), true, "Passed!" );
+});

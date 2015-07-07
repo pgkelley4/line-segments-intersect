@@ -32,9 +32,16 @@ function doLineSegmentsIntersect(p, p2, q, q2) {
 			return true
 		}
 		// Do they overlap? (Are all the point differences in either direction the same sign)
-		// Using != as exclusive or
-		return ((q.x - p.x < 0) != (q.x - p2.x < 0) != (q2.x - p.x < 0) != (q2.x - p2.x < 0)) || 
-			((q.y - p.y < 0) != (q.y - p2.y < 0) != (q2.y - p.y < 0) != (q2.y - p2.y < 0));
+		return !allEqual(
+				(q.x - p.x < 0),
+				(q.x - p2.x < 0),
+				(q2.x - p.x < 0),
+				(q2.x - p2.x < 0)) ||
+			!allEqual(
+				(q.y - p.y < 0),
+				(q.y - p2.y < 0),
+				(q2.y - p.y < 0),
+				(q2.y - p2.y < 0));
 	}
 
 	if (denominator == 0) {
@@ -86,4 +93,22 @@ function subtractPoints(point1, point2) {
  */
 function equalPoints(point1, point2) {
 	return (point1.x == point2.x) && (point1.y == point2.y)
+}
+
+/**
+ * See if all arguments are equal.
+ *
+ * @param {...} args arguments that will be compared by '=='.
+ *
+ * @return if all arguments are equal
+ */
+function allEqual(args) {
+	var firstValue = arguments[0],
+		i;
+	for (i = 1; i < arguments.length; i += 1) {
+		if (arguments[i] != firstValue) {
+			return false;
+		}
+	}
+	return true;
 }
