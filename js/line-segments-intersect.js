@@ -4,17 +4,24 @@
  */
 
 /**
+ * An object containing x and y coordinates.
+ * @typedef {Object} Point
+ * @property {number} x
+ * @property {number} y
+ */
+
+/**
  * See if two line segments intersect. This uses the 
  * vector cross product approach described below:
  * http://stackoverflow.com/a/565282/786339
  * 
- * @param {Object} p point object with x and y coordinates
+ * @param {Point} p point object with x and y coordinates
  *  representing the start of the 1st line.
- * @param {Object} p2 point object with x and y coordinates
+ * @param {Point} p2 point object with x and y coordinates
  *  representing the end of the 1st line.
- * @param {Object} q point object with x and y coordinates
+ * @param {Point} q point object with x and y coordinates
  *  representing the start of the 2nd line.
- * @param {Object} q2 point object with x and y coordinates
+ * @param {Point} q2 point object with x and y coordinates
  *  representing the end of the 2nd line.
  */
 function doLineSegmentsIntersect(p, p2, q, q2) {
@@ -58,8 +65,8 @@ function doLineSegmentsIntersect(p, p2, q, q2) {
 /**
  * Calculate the cross product of the two points.
  * 
- * @param {Object} point1 point object with x and y coordinates
- * @param {Object} point2 point object with x and y coordinates
+ * @param {Point} point1 point object with x and y coordinates
+ * @param {Point} point2 point object with x and y coordinates
  * 
  * @return the cross product result as a float
  */
@@ -70,8 +77,8 @@ function crossProduct(point1, point2) {
 /**
  * Subtract the second point from the first.
  * 
- * @param {Object} point1 point object with x and y coordinates
- * @param {Object} point2 point object with x and y coordinates
+ * @param {Point} point1 point object with x and y coordinates
+ * @param {Point} point2 point object with x and y coordinates
  * 
  * @return the subtraction result as a point object
  */ 
@@ -86,8 +93,8 @@ function subtractPoints(point1, point2) {
 /**
  * See if the points are equal.
  *
- * @param {Object} point1 point object with x and y coordinates
- * @param {Object} point2 point object with x and y coordinates
+ * @param {Point} point1 point object with x and y coordinates
+ * @param {Point} point2 point object with x and y coordinates
  *
  * @return if the points are equal
  */
